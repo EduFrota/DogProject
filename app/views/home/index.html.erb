@@ -1,5 +1,7 @@
-  Sejá bem vindo <%= current_user.email %>
+  Sejá bem vindo <%= current_user.name %>
 <p>Essa site ajuda você a encontar o par perfeito para o seu cãozinho</p>
 <ul>
 <%= link_to "Sair", destroy_user_session_path, method: :delete %>
+<%= link_to "Editar Usuário", edit_user_registration_path, method: :get %>
+
 </ul>
