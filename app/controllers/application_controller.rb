@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
  protected
  def configure_permitted_parameters
      devise_parameter_sanitizer.permit(:account_update, keys: [:name])
+     devise_parameter_sanitizer.permit(:account_update, keys: [:city])
+     devise_parameter_sanitizer.permit(:account_update, keys: [:state])
+     devise_parameter_sanitizer.permit(:account_update, keys: [:phone])
+  end
  end
-
-end
