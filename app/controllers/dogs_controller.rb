@@ -1,3 +1,4 @@
+
 class DogsController < ApplicationController
   before_action :set_dog, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
@@ -5,7 +6,11 @@ class DogsController < ApplicationController
   # GET /dogs
   # GET /dogs.json
   def index
-     @dogs = Dog.where(user_id: current_user)
+    @dogs = Dog.where(user_id: current_user)
+  end
+
+  def alldogs
+    @dogs = Dog.all
   end
 
   # GET /dogs/1
@@ -19,7 +24,7 @@ class DogsController < ApplicationController
   end
 
   # GET /dogs/1/edit
-  def edit
+  def edit  
   end
 
   # POST /dogs
