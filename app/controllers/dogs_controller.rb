@@ -2,7 +2,7 @@
 class DogsController < ApplicationController
   before_action :set_dog, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
-
+  before_action :authorize_dog, only: [:edit, :update]
   # GET /dogs
   # GET /dogs.json
   def index
@@ -24,7 +24,7 @@ class DogsController < ApplicationController
   end
 
   # GET /dogs/1/edit
-  def edit  
+  def edit
   end
 
   # POST /dogs
@@ -76,5 +76,9 @@ class DogsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def dog_params
       params.require(:dog).permit(:name, :breed, :user_id, :image)
+    end
+
+    def authorize_dog
+      authorize @dog
     end
 end

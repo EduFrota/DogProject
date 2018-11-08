@@ -18,5 +18,7 @@
   <%= @dog.user.name %>
 </p>
 
-<%= link_to 'Edit', edit_dog_path(@dog) %> |
+<% if policy(@dog).edit? %>
+<%= link_to 'Show', @dog %> |
 <%= link_to 'Back', dogs_path %>
+<% end %>
