@@ -1,14 +1,6 @@
-  Sejá bem vindo <%= current_user.name %>
+
+
 <p>Essa site ajuda você a encontar o par perfeito para o seu cãozinho</p>
-<ul>
-
-<p>
-  <%= link_to "Sair", destroy_user_session_path, method: :delete %>
-</p>
-
-<p>
-  <%= link_to "Editar Usuário", edit_user_registration_path, method: :get %>
-</p>
 
 </p>
   <h1>Escolha a Opção</h1>
@@ -16,12 +8,8 @@
   <h2><%=link_to "Ver meus  cães", dogs_path %></h2>
 </p>
 <p>
-  <h2><%=link_to "Adicionar cão  ", new_dog_path %></h2>
+  <h2><%=link_to "Adicionar cão", new_dog_path %></h2>
 </p>
 <p>
   <h2><%=link_to "ver todos os cães", alldogs_path %></h2>
 </p>
-
-
-
-</ul>

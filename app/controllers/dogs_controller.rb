@@ -10,7 +10,7 @@ class DogsController < ApplicationController
   end
 
   def alldogs
-    @dogs = Dog.all
+    @dogs = Dog.where.not(user_id: current_user)
   end
 
   # GET /dogs/1

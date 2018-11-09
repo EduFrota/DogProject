@@ -16,7 +16,13 @@
     <div class="field">
       <%= f.label :city %><br />
       <%= f.text_field :city %>
-     </div>
+      <select>
+        <option>Volvo</option>
+        <option>Saab</option>
+        <option>Mercedes</option>
+        <option>Audi</option>
+      </select>
+    </div>
 
     <div class="field">
       <%= f.label :phone %><br />
@@ -51,6 +57,8 @@
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
+
+
 
   <div class="actions">
     <%= f.submit "Update" %>

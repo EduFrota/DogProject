@@ -1,0 +1,14 @@
+<nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Logo</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <% if current_user.present? %>
+        <li><a href="#"> <%= current_user.email %> </a></li>
+        <li><%= link_to 'sair',destroy_user_session_path, method: :delete %></li>
+        <li><%= link_to 'Editar Usuário', edit_user_registration_path, method: :get %></li>
+         <% else %>
+         <li><%= link_to 'entrar',new_user_session_path %></li>
+      <% end %>
+      </ul>
+    </div>
+  </nav>
