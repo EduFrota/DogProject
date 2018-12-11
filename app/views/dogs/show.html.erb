@@ -1,5 +1,15 @@
+<header>
+  <%= render "shared/navbarTabs" %>
+</header>
 <p id="notice"><%= notice %></p>
 
+<p id="notice"><%= notice %></p>
+
+
+
+<p>
+  <strong><td><%= link_to favorite_text, favorites_update_path(dog: @dog), id:'favorite_link', remote: true %> </td></strong>
+</p>
 
 <%= image_tag(@dog.image_url(:thumb).to_s) %>
 
@@ -17,6 +27,7 @@
   <strong>Dono:</strong>
   <%= @dog.user.name %>
 </p>
+
 
 <% if policy(@dog).edit? %>
 <%= link_to 'Show', @dog %> |

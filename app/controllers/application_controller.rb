@@ -13,6 +13,11 @@ private
     redirect_to(request.referrer || root_path)
   end
 
+  def favorite_text
+    return @favorite_exists ? "UnFavorite" : "Favorite"
+  end
+  helper_method :favorite_text
+
 
  protected
  def configure_permitted_parameters

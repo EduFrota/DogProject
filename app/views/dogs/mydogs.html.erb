@@ -1,4 +1,8 @@
+<header>
+  <%= render "shared/navbarTabs" %>
+</header>
 <p id="notice"><%= notice %></p>
+
 
 <h1>Dogs</h1>
 
@@ -8,7 +12,7 @@
       <th>Imagem</th>
       <th>Name</th>
       <th>Breed</th>
-      <th>User</th>
+      <th>Cidade</th>
       <th colspan="4"></th>
     </tr>
   </thead>
@@ -19,12 +23,13 @@
         <td><%= image_tag(dog.image_url(:thumb).to_s) %></td>
         <td><%= dog.name %></td>
         <td><%= dog.breed %></td>
-        <td><%= dog.user.name %></td>
+        <td><%= dog.user.city %></td>
         <td><%= link_to 'Show', dog %></td>
-
+        <td><%= link_to 'Edit', edit_dog_path(dog) %></td>
+        <td><%= link_to 'Destroy', dog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+<%= link_to 'New Dog', new_dog_path %>
 <br>

@@ -2,26 +2,30 @@
 class DogsController < ApplicationController
   before_action :set_dog, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
-  before_action :authorize_dog, only: [:edit, :update]
+  before_action :authorize_dog, only: [:edit, :update, :destroy]
   # GET /dogs
   # GET /dogs.json
   def index
-    @dogs = Dog.where(user_id: current_user)
+    @Search = Dog.where.not(user_id: current_user).ransack(params[:q])
+    @dogs = @Search.result(distinct: true)
+    #@dogs = Dog.where.not(user_id: current_user)
   end
 
-  def alldogs
-    @dogs = Dog.where.not(user_id: current_user)
+  def mydogs
+    @dogs = Dog.where(user_id: current_user)
   end
 
   # GET /dogs/1
   # GET /dogs/1.json
   def show
+    @favorite_exists = Favorite.where(dog: @dog, user: current_user)  == [] ? false : true
   end
 
   # GET /dogs/new
   def new
     @dog = Dog.new
   end
+
 
   # GET /dogs/1/edit
   def edit
@@ -75,7 +79,8 @@ class DogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def dog_params
-      params.require(:dog).permit(:name, :breed, :user_id, :image)
+      params.require(:dog).permit(:name, :breed, :user_id, :image, :age, :gender, :vacine, :pedigree,
+       :mother_name, :father_name, :register, :temperament, :length, :heigth, :pelage, :pelage_color, :weight)
     end
 
     def authorize_dog
