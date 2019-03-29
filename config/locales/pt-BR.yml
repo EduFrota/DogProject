@@ -1,0 +1,13 @@
+pt-BR:
+  activerecord:
+    models:
+      company:
+        one: Empresa
+        other: Empresas
+    attributes:
+      dog:
+        name: Nome
+        rat: RAT
+        cnpj: CNPJ
+        bank_agency: Agencia Bancária
+        bank_account: Conta Corrente

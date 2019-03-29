@@ -1,21 +1,40 @@
 <%= simple_form_for @dog do |f| %>
-  <%= f.input :image %>
-  <%= f.input :name %>
-  <%= f.input :breed %>
-  <%= f.input :age %>
-  <%= f.input :gender %>
-  <%= f.input :vacine %>
-  <%= f.input :pedigree %>
-  <%= f.input :mother_name %>
-  <%= f.input :father_name %>
-  <%= f.input :register %>
-  <%= f.input :temperament %>
-  <%= f.input :length %>
-  <%= f.input :heigth %>
-  <%= f.input :pelage %>
-  <%= f.input :pelage_color %>
-  <%= f.input :weight %>
+<div class="row">
+  <fieldset>
+    <legend>
+        Informações Sobre o cão
+    </legend>
+      <%= f.input :name, wrapper_html: { class: 'm6 s12'  } %>
+      <%= f.input :image, wrapper_html: { class: 'm6 s6 l6' }  %>
+      <%= f.input :breed, as: :select, collection: Dog::BREEDS, wrapper_html: { class: 'm6 sl2' } %>
+      <%= f.input :gender, as: :select, collection: ['Femea', 'macho'], wrapper_html: { class: 'm6 s12' } %>
+      <%= f.input :age, wrapper_html: { class: 'm6 s12'    } %>
+      <%= f.input :temperament, wrapper_html: { class: 'm6 s6' } %>
+      <%= f.input :vacine, include_blank: 'Vacina', wrapper_html: { class: 'm6 s12' } %>
+  </fieldset>
+</div>
+
+<div class="row">
+  <fieldset>
+    <legend>Aspectos Físicos</legend>
+    <%= f.input :length,as: :select,collection: Dog::SIZES, wrapper_html: { class: 'm6 s12 l6' } %>
+    <%= f.input :weight, wrapper_html: { class: 'm6 s12 l6' } %>
+    <%= f.input :heigth, wrapper_html: { class: 'm6 s12 l6' } %>
+    <%= f.input :pelage, as: :select, collection: Dog::PELAGES, wrapper_html: { class: 'm6 s6' } %>
+    <%= f.input :pelage_color, wrapper_html: { class: 'm6 s6' } %>
+  </fieldset>
+</div>
 
 
-  <%= f.button :submit %>
+
+<div class="row">
+  <fieldset>
+    <legend>Informações sobre Pedigree</legend>
+    <%= f.input :pedigree, include_blank: 'Pedigree', wrapper_html: { class: 'm6 s12' } %>
+    <%= f.input :mother_name, wrapper_html: { class: 'm6 s12' } %>
+    <%= f.input :father_name, wrapper_html: { class: 'm6 s12' } %>
+    <%= f.input :register, wrapper_html: { class: 'm6 s12' } %>
+  </fieldset>
+</div>
+<%= f.button :submit %>
 <% end %>

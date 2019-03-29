@@ -1,38 +1,35 @@
-<header>
-  <%= render "shared/navbarTabs" %>
-</header>
-
-
-
-<%= search_form_for @Search do |f| %>
-  # Search if the name field contains...
-  <%= f.label :name_cont %>
-  <%= f.search_field :name_cont %>
-  <%= f.submit %>
-<% end %>
-
-
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <th>Name</th>
-      <th>Breed</th>
-      <th>User</th>
-      <th colspan="4"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @dogs.each do |dog| %>
-      <tr>
-        <td><%= image_tag(dog.image_url(:thumb).to_s) %></td>
-        <td><%= dog.name %></td>
-        <td><%= dog.breed %></td>
-        <td><%= dog.user.name %></td>
-        <td><%= link_to 'Show', dog %></td>
-      </tr>
+<div class="row">
+  <%= search_form_for @Search do |f| %>
+    <% f.label :name_cont_or_breed_or_user_city_or_user_state_cont %>
+    <%= f.search_field :name_or_breed_or_user_city_or_user_state_cont, placeholder: "Buscar"  %>
+    <div class="form-actions">
+      <%= f.submit "Enviar", class: "btn btn-lg btn-success btn-block" %>
+    </div>
     <% end %>
-  </tbody>
-</table>
-<br>
+</div>
+
+<div class="row">
+    <% @dogs.each do |dog| %>
+      <div class = "col l3 m6 s12">
+          <div class= "card">
+            <div class= "card-image">
+                <%= link_to image_tag(dog.image_url(:thumb).to_s), dog %>
+               <span class="card-title">
+                <%= dog.name %>
+                </span>
+            </div>
+              <div class="card-content">
+                <%= dog.gender %>
+                <br>
+                <%= dog.breed %>
+                <br>
+                <strong>Vacinado</strong>
+                <%= dog.vacined %>
+                <br>
+                <strong>Pedigree</strong>
+                <%= dog.pedigre %>
+              </div>
+          </div>
+      </div>
+    <% end %>
+</div>

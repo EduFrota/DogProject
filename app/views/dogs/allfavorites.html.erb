@@ -1,29 +1,25 @@
-<header>
-  <%= render "shared/navbarTabs" %>
-</header>
-
-
-
-
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <th>Name</th>
-      <th>Breed</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% current_user.favorites.each do |favorite| %>
-      <tr>
-        <td><%= image_tag(favorite.dog.image_url(:thumb).to_s) %></td>
-        <td><%= favorite.dog.name %></td>
-        <td><%= favorite.dog.breed %></td>
-        <td><%= link_to 'Show', favorite.dog %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<br>
+<div class="row">
+  <% current_user.favorites.each do |favorite| %>
+   <div class="col l3 m6 s6">
+     <div class="card">
+       <div class="card-image">
+         <%= link_to image_tag(favorite.dog.image_url(:thumb).to_s), favorite.dog %>
+         <span class="card-title">
+           <%= favorite.dog.name %>
+         </span>
+       </div>
+          <div class="card-content">
+            <%= favorite.dog.gender %>
+            <br>
+            <%= favorite.dog.breed %>
+            <br>
+            <strong>Vacina  </strong>
+            <%= favorite.dog.vacined %>
+            <br>
+            <strong>Pedigree </strong>
+            <%= favorite.dog.pedigre %>
+          </div>
+     </div>
+   </div>
+      <% end %>
+</div>

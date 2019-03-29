@@ -3,6 +3,7 @@ class FavoritesController < ApplicationController
     favorite = Favorite.where(dog: Dog.find(params[:dog]), user: current_user)
     if favorite == []
       Favorite.create(dog: Dog.find(params[:dog]), user: current_user)
+      @favorite_created = true
       @favorite_exists = true
     else
       favorite.destroy_all

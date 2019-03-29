@@ -1,35 +1,33 @@
-<header>
-  <%= render "shared/navbarTabs" %>
-</header>
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="align right">
+    <br>
+    <%= link_to content_tag(:i, 'add', class: 'material-icons'), new_dog_path, class: 'btn-floating waves-effect waves-light btn-large blue' %>
+  </div>
+</div>
 
 
-<h1>Dogs</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Imagem</th>
-      <th>Name</th>
-      <th>Breed</th>
-      <th>Cidade</th>
-      <th colspan="4"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="row">
     <% @dogs.each do |dog| %>
-      <tr>
-        <td><%= image_tag(dog.image_url(:thumb).to_s) %></td>
-        <td><%= dog.name %></td>
-        <td><%= dog.breed %></td>
-        <td><%= dog.user.city %></td>
-        <td><%= link_to 'Show', dog %></td>
-        <td><%= link_to 'Edit', edit_dog_path(dog) %></td>
-        <td><%= link_to 'Destroy', dog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div class="col l3 m6 s12 ">
+          <div class="card">
+            <div class="card-image ">
+                <%= link_to image_tag(dog.image_url(:thumb).to_s), dog %>
+                <span class="card-title">
+                  <%= dog.name %>
+                </span>
+            </div>
+              <div class="card-content">
+                <%= dog.gender %>
+                <br>
+                <%= dog.breed %>
+            </div>
+            <div class="card-action">
+              <div class="align center">
+                <%= link_to content_tag(:i, 'edit', class: 'material-icons'), edit_dog_path(dog) %>
+                <%= link_to content_tag(:i, 'delete', class: 'material-icons'),dog, method: :delete, data: {confirm:'Tem Certeza?'} %>
+              </div>
+            </div>
+          </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
-<%= link_to 'New Dog', new_dog_path %>
-<br>
+</div>

@@ -1,35 +1,112 @@
-<header>
-  <%= render "shared/navbarTabs" %>
-</header>
-<p id="notice"><%= notice %></p>
 
-<p id="notice"><%= notice %></p>
+<br>
+<div class="row">
+
+  <div class = "col l4  m12 s12 alingn center">
+    <%= image_tag(@dog.image_url(:thumb).to_s) %>
+  </div>
+
+  <div class="col l4 m12 s12 alingn left ">
+    <fieldset>
+      <legend>Informações sobre o cão</legend>
+        <p>
+          <strong>Nome</strong>
+          <br>
+          <%= @dog.name %>
+        </p>
+        <p>
+          <strong>Idade</strong>
+          <br>
+          <%= @dog.age  %> anos
+        </p>
+        <p>
+          <strong>Raça</strong>
+          <br>
+          <%= @dog.breed %>
+        </p>
+        <p>
+          <strong>Genero</strong>
+          <br>
+          <%= @dog.gender  %>
+        </p>
+        <p>
+          <strong>Vacina</strong>
+          <br>
+          <%= @dog.vacined  %>
+        </p>
+        <strong>Tipo de Pelo</strong>
+        <br>
+        <%= @dog.pelage  %>
+      </p>
+
+      <p>
+        <strong>Cor do pelo</strong>
+        <br>
+        <%= @dog.pelage_color  %>
+      </p>
+      <p>
+        <strong>Temperamento</strong>
+        <br>
+        <%= @dog.temperament  %>
+      </p>
+
+      <p>
+        <strong>Pedigree</strong>
+        <br>
+        <%= @dog.pedigre %>
+      </p>
+
+      <% if @dog.pedigree == true %>
+      <p>
+        <strong>Nome da mãe</strong>
+        <br>
+        <%= @dog.mother_name  %>
+      </p>
+      <p>
+        <strong>Nome do pai</strong>
+        <br>
+        <%= @dog.father_name  %>
+        <% end %>
+      </p>
+      <p>
+        <strong>Registro</strong>
+        <br>
+        <%= @dog.register %>
+      </p>
+      
+  </fieldset>
+  </div>
 
 
+  <div class="col l4 m12 s12 alingn right">
+    <fieldset>
+      <legend>Informações sobre o dono</legend>
+      <p>
+        <strong>Nome</strong>
+        <br>
+        <%= @dog.user.name %>
+      </p>
+      <p>
+        <strong>Estado</strong>
+        <br>
+        <%= @dog.user.state %>
+      </p>
+      <p>
+        <strong>Cidade</strong>
+        <br>
+        <%= @dog.user.city %>
+      </p>
+      <p>
+        <strong>Telefone</strong>
+        <br>
+        <%= @dog.user.phone %>
+      </p>
+    </fieldset>
 
-<p>
-  <strong><td><%= link_to favorite_text, favorites_update_path(dog: @dog), id:'favorite_link', remote: true %> </td></strong>
-</p>
-
-<%= image_tag(@dog.image_url(:thumb).to_s) %>
-
-<p>
-  <strong>Name:</strong>
-  <%= @dog.name %>
-</p>
-
-<p>
-  <strong>Breed:</strong>
-  <%= @dog.breed %>
-</p>
-
-<p>
-  <strong>Dono:</strong>
-  <%= @dog.user.name %>
-</p>
-
-
-<% if policy(@dog).edit? %>
-<%= link_to 'Show', @dog %> |
-<%= link_to 'Back', dogs_path %>
-<% end %>
+  </div>
+</div>
+      <% unless current_user.id == @dog.user_id %>
+          <p>
+            <%= link_to favorite_text, favorites_update_path(dog: @dog), id:'favorite_link', remote: true %>
+          </p>
+      <% end %>

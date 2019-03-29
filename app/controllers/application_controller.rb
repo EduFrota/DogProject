@@ -2,9 +2,18 @@ class ApplicationController < ActionController::Base
 
  include Pundit
  protect_from_forgery with: :exception
- before_action :configure_permitted_parameters, if: :devise_controller?
- before_action :authenticate_user!
 
+
+
+# layout :layout_by_resource
+#
+#  def layout_by_resource
+#    if devise_controller?
+#      "devise"
+#    else
+#      "application"
+#    end
+#  end
 
 rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 private
@@ -21,6 +30,7 @@ private
 
  protected
  def configure_permitted_parameters
+     devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
      devise_parameter_sanitizer.permit(:account_update, keys: [:name])
      devise_parameter_sanitizer.permit(:account_update, keys: [:city])
      devise_parameter_sanitizer.permit(:account_update, keys: [:state])

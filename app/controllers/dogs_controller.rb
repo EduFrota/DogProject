@@ -1,10 +1,11 @@
-
 class DogsController < ApplicationController
   before_action :set_dog, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
   before_action :authorize_dog, only: [:edit, :update, :destroy]
   # GET /dogs
   # GET /dogs.json
+
+  layout "application"
   def index
     @Search = Dog.where.not(user_id: current_user).ransack(params[:q])
     @dogs = @Search.result(distinct: true)
@@ -15,6 +16,9 @@ class DogsController < ApplicationController
     @dogs = Dog.where(user_id: current_user)
   end
 
+  def filtergenderm
+    @dogs = Dog.select(gender: macho)
+  end
   # GET /dogs/1
   # GET /dogs/1.json
   def show
@@ -39,7 +43,7 @@ class DogsController < ApplicationController
     respond_to do |format|
       if @dog.save
         format.html { redirect_to @dog, notice: 'Dog was successfully created.' }
-        format.json { render :show, status: :created, location: @dog }
+        format.json { render :mydogs, status: :created, location: @dog }
       else
         format.html { render :new }
         format.json { render json: @dog.errors, status: :unprocessable_entity }
@@ -53,7 +57,7 @@ class DogsController < ApplicationController
     respond_to do |format|
       if @dog.update(dog_params)
         format.html { redirect_to @dog, notice: 'Dog was successfully updated.' }
-        format.json { render :show, status: :ok, location: @dog }
+        format.json { render :mydogs, status: :ok, location: @dog }
       else
         format.html { render :edit }
         format.json { render json: @dog.errors, status: :unprocessable_entity }
@@ -80,7 +84,7 @@ class DogsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def dog_params
       params.require(:dog).permit(:name, :breed, :user_id, :image, :age, :gender, :vacine, :pedigree,
-       :mother_name, :father_name, :register, :temperament, :length, :heigth, :pelage, :pelage_color, :weight)
+       :mother_name, :father_name, :register, :temperament, :length, :heigth, :pelage, :pelage_color, :weight, :teste)
     end
 
     def authorize_dog

@@ -1,18 +1,31 @@
-<nav> <!-- navbar content here  --> </nav>
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<nav class="nav-extended  light-blue darken-4"  >
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo" >Logo</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <% if current_user.present? %>
+          <li><i class= "material-icons left">account_circle</i>
+           <%= current_user.name %> </li>
+          <li><%= link_to content_tag(:i, 'edit', class: 'material-icons'), edit_user_registration_path, method: :get %></li>
+          <li> <%= link_to content_tag(:i, 'exit_to_app', class: 'material-icons'),destroy_user_session_path, method: :delete %> </li>
+      <% end %>
+      </ul>
+    </div>
+      <div class="nav-content ">
+        <ul class="tabs tabs-transparent">
+            <li class="tab"><%=link_to "Ver meus  cães",  mydogs_path %></li>
+            <li class="tab"><%=link_to "ver todos os cães", dogs_path %></li>
+            <li class="tab"><%=link_to "Favoritos", allfavorites_path %></li>
+        </ul>
+      </div>
+  </nav>
 
- <ul id="slide-out" class="sidenav">
-   <li><div class="user-view">
-     <div class="background">
-       <img src="images/office.jpg">
-     </div>
-     <a href="#user"><img class="circle" src="images/yuna.jpg"></a>
-     <a href="#name"><span class="white-text name">John Doe</span></a>
-     <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
-   </div></li>
-   <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-   <li><a href="#!">Second Link</a></li>
-   <li><div class="divider"></div></li>
-   <li><a class="subheader">Subheader</a></li>
-   <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
- </ul>
- <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+  <ul class="sidenav" id="mobile-demo">
+  <li>  <%= link_to content_tag(:i, 'edit', class: 'material-icons'), edit_user_registration_path, method: :get %></li>
+
+
+    <li><%= link_to 'sair',destroy_user_session_path, method: :delete %></li>
+  </ul>

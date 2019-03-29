@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_02_181406) do
+ActiveRecord::Schema.define(version: 2019_01_23_125133) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,8 +24,6 @@ ActiveRecord::Schema.define(version: 2018_12_02_181406) do
     t.string "image"
     t.integer "age"
     t.string "gender"
-    t.string "vacine"
-    t.string "pedigree"
     t.string "mother_name"
     t.string "father_name"
     t.string "register"
@@ -35,6 +33,8 @@ ActiveRecord::Schema.define(version: 2018_12_02_181406) do
     t.string "pelage"
     t.string "pelage_color"
     t.float "weight"
+    t.boolean "vacine"
+    t.boolean "pedigree"
     t.index ["user_id"], name: "index_dogs_on_user_id"
   end
 

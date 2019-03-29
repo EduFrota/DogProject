@@ -1,13 +1,6 @@
-<header>
-  <%= render "shared/navbarTabs" %>
-</header>
+
 <p id="notice"><%= notice %></p>
 
 <h1>Editing Dog</h1>
 
 <%= render 'form', dog: @dog %>
-
-<% if policy(@dog).edit? %>
-<%= link_to 'Show', @dog %> |
-<%= link_to 'Back', dogs_path %>
-<% end %>

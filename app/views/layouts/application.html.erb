@@ -9,10 +9,23 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <header>
-  
+
+    <% if current_user.present? %>
+      <%= render "shared/sidenav" %>  
+    <% else %>
+      <%= render "shared/navbar" %>
+    <% end %>
+
   </header>
 
+
   <body>
-    <%= yield %>
+    <div class="row">
+     <div class="container">
+       <%= yield %>
+     </div>
+    </div>
+
+
   </body>
 </html>
