@@ -18,14 +18,14 @@
 
             <div class="form-group">
               <% if @minimum_password_length %>
-                <em>(<%= @minimum_password_length %> characters minimum)</em>
+                <em><%= @minimum_password_length %> caracteres no minimo</em>
               <% end %><br />
               <div class="form-group">
-                  <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Password" %>
+                  <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Senha" %>
             </div>
 
             <div class="form-group">
-              <%= f.password_field :password_confirmation,autocomplete: "off", class: "form-control", placeholder: "Confirme Password" %>
+              <%= f.password_field :password_confirmation,autocomplete: "off", class: "form-control", placeholder: "Confriamr Senha" %>
             </div>
 
             <div class="form-actions">

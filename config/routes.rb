@@ -17,6 +17,7 @@ Rails.application.routes.draw do
    end
 
   get 'mydogs', to: 'dogs#mydogs'
+  get 'dogs/:id/compare', to: 'dogs#compare', as: :dog_compare
   get 'allfavorites', to: 'dogs#allfavorites'
 
 

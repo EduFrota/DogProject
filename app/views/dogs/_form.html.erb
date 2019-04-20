@@ -14,7 +14,7 @@
   </fieldset>
 </div>
 
-<div class="row">
+<div class="row">,
   <fieldset>
     <legend>Aspectos Físicos</legend>
     <%= f.input :length,as: :select,collection: Dog::SIZES, wrapper_html: { class: 'm6 s12 l6' } %>
@@ -36,5 +36,5 @@
     <%= f.input :register, wrapper_html: { class: 'm6 s12' } %>
   </fieldset>
 </div>
-<%= f.button :submit %>
+<%= f.button :submit, "Confirmar" %>
 <% end %>

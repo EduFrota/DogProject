@@ -1,6 +1,7 @@
 <head>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
+
 <nav class="nav-extended  light-blue darken-4"  >
     <div class="nav-wrapper">
       <a href="#" class="brand-logo" >Logo</a>
@@ -13,7 +14,6 @@
           <li> <%= link_to content_tag(:i, 'exit_to_app', class: 'material-icons'),destroy_user_session_path, method: :delete %> </li>
       <% end %>
       </ul>
-    </div>
       <div class="nav-content ">
         <ul class="tabs tabs-transparent">
             <li class="tab"><%=link_to "Ver meus  cães",  mydogs_path %></li>
@@ -21,7 +21,9 @@
             <li class="tab"><%=link_to "Favoritos", allfavorites_path %></li>
         </ul>
       </div>
-  </nav>
+
+    </div>
+        </nav>
 
   <ul class="sidenav" id="mobile-demo">
   <li>  <%= link_to content_tag(:i, 'edit', class: 'material-icons'), edit_user_registration_path, method: :get %></li>

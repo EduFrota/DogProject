@@ -1,13 +1,5 @@
-<div class="row">
-    <%= search_form_for @Search do |f| %>
-    <% f.label :name_cont_or_breed_or_user_city_or_user_state_cont %>
-    <%= f.search_field :name_or_breed_or_user_city_or_user_state_cont, placeholder: "Buscar"  %>
-    <div class="form-actions">
-      <%= f.submit "Enviar", class: "btn btn-lg btn-success btn-block" %>
-    </div>
-    <% end %>
-</div>
-
+<h1>Compare</h1>
+<p> <%= @query %> </p>
 <div class="row">
     <% @dogs.each do |dog| %>
       <div class = "col l3 m6 s12">

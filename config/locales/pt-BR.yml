@@ -1,13 +1,32 @@
 pt-BR:
   activerecord:
     models:
-      company:
-        one: Empresa
-        other: Empresas
     attributes:
       dog:
         name: Nome
-        rat: RAT
-        cnpj: CNPJ
-        bank_agency: Agencia Bancária
-        bank_account: Conta Corrente
+        breed: Raça
+        gender: Genêro
+        image: imagem
+        age: Idade
+        temperament: Temperamento
+        vacine: Vacina
+        weight: Peso
+        pelage: Tipo de Pêlo
+        pelage_color: Cor do Pêlo
+        length: tamanho
+        heigth: comprimento
+        mother_name: Nome da mãe
+        father_name: Nome do pai
+        register: Numero de Registro
+      user:
+        name: Nome
+        state: Estado
+        city: Cidade
+        phone: Telefone
+        password: Senha
+        email: E-mail
+        current_password: Senha Atual
+        password_confirmation: Confirmar Senha
+        6 characters minimum: senha com no minimo 6 caracteres
+
+        

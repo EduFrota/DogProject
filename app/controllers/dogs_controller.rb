@@ -1,15 +1,28 @@
 class DogsController < ApplicationController
-  before_action :set_dog, only: [:show, :edit, :update, :destroy]
+  before_action :set_dog, only: [:show, :edit, :update, :destroy, :compare]
   before_action :authenticate_user!
   before_action :authorize_dog, only: [:edit, :update, :destroy]
   # GET /dogs
   # GET /dogs.json
 
   layout "application"
+
+
+
   def index
     @Search = Dog.where.not(user_id: current_user).ransack(params[:q])
     @dogs = @Search.result(distinct: true)
     #@dogs = Dog.where.not(user_id: current_user)
+  end
+   # falta finalizar
+  def compare
+    # @dogs = Dog.where(breed: @dog.breed)
+    # @dogs = Dog.ransack(breed: @dog.breed)
+
+    @search = Dog.ransack({ breed_eq: @dog.breed, gender_not_eq: @dog.gender, vacine_eq: @dog.vacine, pedigree_eq: @dog.pedigree, user_id_not_eq: current_user.id })
+    @query = @search.result.to_sql
+    @dogs = @search.result
+    #code
   end
 
   def mydogs

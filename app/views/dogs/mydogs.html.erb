@@ -23,6 +23,7 @@
             </div>
             <div class="card-action">
               <div class="align center">
+                <%= link_to content_tag(:i, 'compare', class: 'material-icons'), dog_compare_path(dog) %>
                 <%= link_to content_tag(:i, 'edit', class: 'material-icons'), edit_dog_path(dog) %>
                 <%= link_to content_tag(:i, 'delete', class: 'material-icons'),dog, method: :delete, data: {confirm:'Tem Certeza?'} %>
               </div>
