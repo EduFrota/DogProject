@@ -10,11 +10,11 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 
-//= require jquery/dist/jquery.min
+//= require jquery/dist/jquery.min.js
 //= require jquery3
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require materialize-css/dist/js/materialize.min
+//= require materialize-css/dist/js/materialize.min.js
 //= require materialize-form
 //= require_tree .
