@@ -9,8 +9,3 @@ $(document).on('turbolinks:load', function() {
   $('.sidenav').sidenav();
 
  });
-
-
- $('.carousel.carousel-slider').carousel({
-     fullWidth: true
-  });
