@@ -12,8 +12,7 @@
 
 //= require jquery
 //= require jquery_ujs
-//= require materialize-css/dist/js/materialize.min
+//= require materialize-form
 //= require activestorage
 //= require turbolinks
-//= require materialize-form
 //= require_tree .

@@ -3,9 +3,3 @@ $(document).ready(function(){
   $('.sidenav').sidenav();
 
 });
-
-$(document).on('turbolinks:load', function() {
-  $('select').formSelect();
-  $('.sidenav').sidenav();
-
- });
