@@ -11,8 +11,8 @@
 // about supported directives.
 
 
-//= require rails-ujs
 //= require jquery
+//= require rails-ujs
 //= require materialize-css/dist/js/materialize.min
 //= require activestorage
 //= require materialize-form

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_23_125133) do
+ActiveRecord::Schema.define(version: 2019_05_02_010951) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2019_01_23_125133) do
     t.string "father_name"
     t.string "register"
     t.string "temperament"
-    t.float "length"
+    t.string "length"
     t.float "heigth"
     t.string "pelage"
     t.string "pelage_color"
