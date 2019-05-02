@@ -8,7 +8,7 @@
       <%= f.input :image, wrapper_html: { class: 'm6 s6 l6' }  %>
       <%= f.input :breed, as: :select, collection: Dog::BREEDS, wrapper_html: { class: 'm6 sl2' } %>
       <%= f.input :gender, as: :select, collection: ['Femea', 'macho'], wrapper_html: { class: 'm6 s12' } %>
-      <%= f.input :age, wrapper_html: { class: 'm6 s12'    } %>
+      <%= f.input :age, wrapper_html: { class: 'm6 s12'} %>
       <%= f.input :temperament, wrapper_html: { class: 'm6 s6' } %>
       <%= f.input :vacine, include_blank: 'Vacina', wrapper_html: { class: 'm6 s12' } %>
   </fieldset>
@@ -36,5 +36,6 @@
     <%= f.input :register, wrapper_html: { class: 'm6 s12' } %>
   </fieldset>
 </div>
+
 <%= f.button :submit, "Confirmar" %>
 <% end %>

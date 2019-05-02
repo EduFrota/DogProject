@@ -1,0 +1,57 @@
+<h4>Busca</h4>
+<div class="row">
+
+    <legend>Dados do Cão</legend>
+       <%= search_form_for @Search do |f| %>
+        <div class="col s12 l6 m6">
+          <% f.label :name_cont %>
+          <%= f.search_field :name_cont, placeholder: "Nome"  %>
+        </div>
+        <div class="col s12 l6 m6">
+           <% f.label :breed_cont,"Raça" %>
+           <%= f.select :breed_cont, Dog::BREEDS, include_blank: 'Raça'  %>
+        </div>
+        <div class="col s12 l6 m6">
+           <% f.label :gender_cont %>
+           <%= f.select :gender_cont, ['Femea', 'macho'], include_blank: 'sexo' %>
+        </div>
+        <div class="col s12 l6 m6">
+           <% f.label :length_cont %>
+           <%= f.select :length_cont, Dog::SIZES, include_blank:'Tamanho' %>
+        </div>
+        <div class="col s12 l6 m6">
+           <% f.label :vacine_cont %>
+           <%= f.select :vacine_eq, [['Yes', true], ['No', false]], include_blank: 'Vacina' %>
+        </div>
+        <div class="col s12 l6 m6">
+           <% f.label :pedigree_cont %>
+           <%= f.select :pedigree_eq, [['Yes', true], ['No', false]], include_blank: 'Pedigree' %>
+        </div>
+        <div class="col s12 l6 m6">
+           <% f.label :pelage_cont %>
+           <%= f.select :pelage_cont, Dog::PELAGES, include_blank:'Pelagem' %>
+        </div>
+        <div class="col s12 l6 m6">
+           <% f.label :temperament_cont %>
+           <%= f.search_field :temperament_cont, placeholder: "Temperamento"  %>
+        </div>
+
+      <legend>Dados do Dono</legend>
+        <div class="col s12 l6 m6">
+          <% f.label :user_name_cont %>
+          <%= f.search_field :user_name_cont, placeholder: "Nome"  %>
+        </div>
+        <div class="col s12 l6 m6">
+          <% f.label :user_state_cont %>
+          <%= f.select :user_state_cont, User::STATES, include_blank: 'Estado'  %>
+        </div>
+        <div class="col s12 l6 m6">
+          <% f.label :user_city_cont %>
+          <%= f.search_field :user_city_cont, placeholder: "Cidade"  %>
+        </div>
+
+        </a>
+        <div class="form-actions">
+          <%= f.submit "filtrar", class: "btn btn-lg btn-success btn-block" %>
+          <% end %>
+        </div>

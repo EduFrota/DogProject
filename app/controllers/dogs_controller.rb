@@ -29,8 +29,9 @@ class DogsController < ApplicationController
     @dogs = Dog.where(user_id: current_user)
   end
 
-  def filtergenderm
-    @dogs = Dog.select(gender: macho)
+  def advancedsearch
+    @Search = Dog.where.not(user_id: current_user).ransack(params[:q])
+    @dogs = @Search.result(distinct: true)
   end
   # GET /dogs/1
   # GET /dogs/1.json

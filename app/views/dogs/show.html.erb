@@ -1,9 +1,12 @@
-;
+
 <br>
 <div class="row">
 
   <div class = "col l4  m12 s12 alingn center">
-    <%= image_tag(@dog.image_url(:thumb).to_s) %>
+    <% if @dog.image.present? %>
+      <%= image_tag(@dog.image_url(:thumb).to_s) %>
+    <% else %>
+    <% end %>
   </div>
 
   <div class="col l4 m12 s12 alingn left ">
@@ -33,6 +36,11 @@
           <strong>Vacina</strong>
           <br>
           <%= @dog.vacined  %>
+        </p>
+        <p>
+          <strong>Tamanho</strong>
+          <br>
+          <%= @dog.length  %>
         </p>
         <strong>Tipo de Pelo</strong>
         <br>

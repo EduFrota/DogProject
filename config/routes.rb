@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   get 'mydogs', to: 'dogs#mydogs'
   get 'dogs/:id/compare', to: 'dogs#compare', as: :dog_compare
   get 'allfavorites', to: 'dogs#allfavorites'
-
+  get 'advancedsearch', to: 'dogs#advancedsearch'
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
