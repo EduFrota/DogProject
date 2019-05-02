@@ -7,11 +7,14 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="crossorigin="anonymous"></script>
   </head>
+
+
   <header>
 
     <% if current_user.present? %>
-      <%= render "shared/sidenav" %>  
+      <%= render "shared/sidenav" %>
     <% else %>
       <%= render "shared/navbar" %>
     <% end %>

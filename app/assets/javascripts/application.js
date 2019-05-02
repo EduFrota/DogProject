@@ -12,7 +12,7 @@
 
 
 //= require rails-ujs
-//= require jquery/dist/jquery.min
+
 //= require materialize-css/dist/js/materialize.min
 //= require activestorage
 //= require turbolinks
