@@ -12,7 +12,7 @@ gem 'mini_magick'
 gem 'pundit'
 gem 'simple_form'
 gem 'materialize-form'
- gem 'jquery-rails'
+# gem 'jquery-rails'
 
 
 

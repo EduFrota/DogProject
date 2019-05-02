@@ -13,7 +13,7 @@
 
 //= require jquery
 //= require rails-ujs
-//= require materialize-css/dist/js/materialize.min
+//= require materialize-css/dist/js/materialize
 //= require activestorage
 //= require materialize-form
 //= require_tree .
