@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.1'
 
 
-
+gem 'sinatra', '1.0'
 gem 'ransack'
 gem 'devise'
 gem 'carrierwave', '~> 1.0'
