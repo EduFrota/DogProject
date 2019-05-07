@@ -5,6 +5,7 @@ ruby '2.5.1'
 
 
 gem 'ransack'
+gem 'webpacker'
 gem 'devise'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'

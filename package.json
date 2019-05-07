@@ -2,7 +2,11 @@
   "name": "project_Dog",
   "private": true,
   "dependencies": {
+    "@rails/webpacker": "^4.0.2",
     "jquery": "^3.4.1",
     "materialize-css": "^1.0.0-rc.2"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^3.3.1"
   }
 }
