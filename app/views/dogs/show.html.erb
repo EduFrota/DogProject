@@ -1,16 +1,21 @@
 
-<br>
 <div class="row">
-<div class="align left">
-  <div class = "col l4  m12 s12 ">
-    <% if @dog.image.present? %>
-    <%= image_tag(@dog.image_url(:thumb).to_s) %>
-    <% else %>
-    <% end %>
-  </div>
-</div>
 
-  <div class="col l4 m12 s12 ">
+
+ </div>
+    <div class = "col l4  m12 s12 ">
+      <% if @dog.image.present? %>
+      <%= image_tag(@dog.image_url(:thumb).to_s) %>
+      <% else %>
+      <% end %>
+      <% unless current_user.id == @dog.user_id %>
+          <p>
+            <%= link_to favorite_text, favorites_update_path(dog: @dog), id:'favorite_link', remote: true %>
+          </p>
+      <% end %>
+    </div>
+
+  <div class= "col l4 m12 s12 ">
     <fieldset>
       <legend>Informações sobre o cão</legend>
         <p>
@@ -87,7 +92,7 @@
   </div>
 
 
-  <div class="col l4 m12 s12 ">
+  <div class= "col l4 m12 s12 align right  ">
     <fieldset>
       <legend>Informações sobre o dono</legend>
       <p>
@@ -111,11 +116,7 @@
         <%= @dog.user.phone %>
       </p>
     </fieldset>
-
   </div>
+
 </div>
-      <% unless current_user.id == @dog.user_id %>
-          <p>
-            <%= link_to favorite_text, favorites_update_path(dog: @dog), id:'favorite_link', remote: true %>
-          </p>
-      <% end %>
+    
