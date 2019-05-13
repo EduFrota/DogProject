@@ -2,14 +2,14 @@
 <br>
 <div class="row">
 
-  <div class = "col l4  m12 s12 alingn center">
+  <div class = "col l4  m12 s12 ">
     <% if @dog.image.present? %>
       <%= image_tag(@dog.image_url(:thumb).to_s) %>
     <% else %>
     <% end %>
   </div>
-<div class align right>
-  <div class="col l4 m12 s12 alingn left ">
+
+  <div class="col l4 m12 s12  ">
     <fieldset>
       <legend>Informações sobre o cão</legend>
       <p>
@@ -46,7 +46,7 @@
       <br>
       <%= @dog.pelage  %>
     </p>
-    
+
     <p>
       <strong>Cor do pelo</strong>
       <br>
@@ -83,10 +83,10 @@
     </p>
     </fieldset>
   </div>
-</div>
 
 
-  <div class="col l4 m12 s12 alingn right">
+
+  <div class="col l4 m12 s12 ">
     <fieldset>
       <legend>Informações sobre o dono</legend>
       <p>
