@@ -8,82 +8,82 @@
     <% else %>
     <% end %>
   </div>
-
+<div class align right>
   <div class="col l4 m12 s12 alingn left ">
     <fieldset>
       <legend>Informações sobre o cão</legend>
-        <p>
-          <strong>Nome</strong>
-          <br>
-          <%= @dog.name %>
-        </p>
-        <p>
-          <strong>Idade</strong>
-          <br>
-          <%= @dog.age  %> anos
-        </p>
-        <p>
-          <strong>Raça</strong>
-          <br>
-          <%= @dog.breed %>
-        </p>
-        <p>
-          <strong>Genero</strong>
-          <br>
-          <%= @dog.gender  %>
-        </p>
-        <p>
-          <strong>Vacina</strong>
-          <br>
-          <%= @dog.vacined  %>
-        </p>
-        <p>
-          <strong>Tamanho</strong>
-          <br>
-          <%= @dog.length  %>
-        </p>
-        <strong>Tipo de Pelo</strong>
+      <p>
+        <strong>Nome</strong>
         <br>
-        <%= @dog.pelage  %>
+        <%= @dog.name %>
       </p>
+      <p>
+        <strong>Idade</strong>
+        <br>
+        <%= @dog.age  %> anos
+      </p>
+      <p>
+        <strong>Raça</strong>
+        <br>
+        <%= @dog.breed %>
+      </p>
+      <p>
+        <strong>Genero</strong>
+        <br>
+        <%= @dog.gender  %>
+      </p>
+      <p>
+        <strong>Vacina</strong>
+        <br>
+        <%= @dog.vacined  %>
+      </p>
+      <p>
+        <strong>Tamanho</strong>
+        <br>
+        <%= @dog.length  %>
+      </p>
+      <strong>Tipo de Pelo</strong>
+      <br>
+      <%= @dog.pelage  %>
+    </p>
+    
+    <p>
+      <strong>Cor do pelo</strong>
+      <br>
+      <%= @dog.pelage_color  %>
+    </p>
+    <p>
+      <strong>Temperamento</strong>
+      <br>
+      <%= @dog.temperament  %>
+    </p>
 
-      <p>
-        <strong>Cor do pelo</strong>
-        <br>
-        <%= @dog.pelage_color  %>
-      </p>
-      <p>
-        <strong>Temperamento</strong>
-        <br>
-        <%= @dog.temperament  %>
-      </p>
+    <p>
+      <strong>Pedigree</strong>
+      <br>
+      <%= @dog.pedigre %>
+    </p>
 
-      <p>
-        <strong>Pedigree</strong>
-        <br>
-        <%= @dog.pedigre %>
-      </p>
-
-      <% if @dog.pedigree == true %>
-      <p>
-        <strong>Nome da mãe</strong>
-        <br>
-        <%= @dog.mother_name  %>
-      </p>
-      <p>
-        <strong>Nome do pai</strong>
-        <br>
-        <%= @dog.father_name  %>
-        <% end %>
-      </p>
-      <p>
-        <strong>Registro</strong>
-        <br>
-        <%= @dog.register %>
-      </p>
-
-  </fieldset>
+    <% if @dog.pedigree == true %>
+    <p>
+      <strong>Nome da mãe</strong>
+      <br>
+      <%= @dog.mother_name  %>
+    </p>
+    <p>
+      <strong>Nome do pai</strong>
+      <br>
+      <%= @dog.father_name  %>
+      <% end %>
+    </p>
+    <p>
+      <strong>Registro</strong>
+      <br>
+      <%= @dog.register %>
+    </p>
+    </fieldset>
   </div>
+</div>
 
 
   <div class="col l4 m12 s12 alingn right">

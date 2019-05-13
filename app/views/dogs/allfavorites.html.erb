@@ -4,11 +4,11 @@
      <div class="card">
        <div class="card-image">
          <%= link_to image_tag(favorite.dog.image_url(:thumb).to_s), favorite.dog %>
-         <span class="card-title">
-           <%= favorite.dog.name %>
-         </span>
        </div>
           <div class="card-content">
+            <span class="card-title">
+              <%= favorite.dog.name %>
+            </span>
             <%= favorite.dog.gender %>
             <br>
             <%= favorite.dog.breed %>
