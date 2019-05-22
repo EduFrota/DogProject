@@ -2,28 +2,34 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
-<nav class="nav-extended  light-blue darken-4">
+<nav class="nav-extended  light-blue darken-4 ">
+  <div class="container">
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo" >Logo</a>
+      <div class="brand-logo">
+        <%= link_to image_tag('logo.png', size:"60x60"), mydogs_path%>
+        Projeto
+      </div>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <% if current_user.present? %>
-          <li> <i class= "material-icons left">account_circle</i>
-           <%= current_user.name %> </li>
+        <% if current_user.present? %>
+        <li> <i class= "material-icons left">account_circle</i>
+          <%= current_user.name %> </li>
           <li><%= link_to content_tag(:i, 'edit', class: 'material-icons'), edit_user_registration_path, method: :get %></li>
           <li> <%= link_to content_tag(:i, 'exit_to_app', class: 'material-icons'),destroy_user_session_path, method: :delete %> </li>
-      <% end %>
+          <% end %>
+        </ul>
+    </div>
+    <div class="nav-contennt " >
+      <ul class="tabs tabs-transparent" style="display:flex; justify-content:center;">
+        <li class="tab "><%=link_to "Ver meus  cães",  mydogs_path %></li>
+        <li class="tab"><%=link_to "ver todos os cães", dogs_path %></li>
+        <li class="tab"><%=link_to "Buscar", advancedsearch_path, data: {turbolinks: false } %></li>
+        <li class="tab"><%=link_to "Favoritos", allfavorites_path %></li>
       </ul>
     </div>
   </div>
-      <div class="nav-content ">
-        <ul class="tabs tabs-transparent">
-            <li class="tab"><%=link_to "Ver meus  cães",  mydogs_path %></li>
-            <li class="tab"><%=link_to "ver todos os cães", dogs_path %></li>
-            <li class="tab"><%=link_to "Buscar", advancedsearch_path, data: {turbolinks: false } %></li>
-            <li class="tab"><%=link_to "Favoritos", allfavorites_path %></li>
-        </ul>
-  </nav>
+</nav>
+
 
   <ul class="sidenav" id="mobile-demo">
   <li>  <%= link_to content_tag(:i, 'edit', class: 'material-icons'), edit_user_registration_path, method: :get %></li>

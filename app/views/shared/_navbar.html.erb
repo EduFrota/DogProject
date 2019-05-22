@@ -1,14 +1,16 @@
 <nav class=" light-blue darken-4">
+  <div class="container">
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo">Logo</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <a href="#" class="brand-logo"> <%= image_tag('logo.png', size:"45x45")%> </a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><%=link_to "Entrar", new_user_session_path %></li>
         <li><%=link_to "Registrar", new_user_registration_path %></li>
       </ul>
     </div>
   </nav>
   <ul class="sidenav" id="mobile-demo">
-   <li><a href="sass.html">Sass</a></li>
-   <li><a href="badges.html">Components</a></li>
-   <li><a href="collapsible.html">JavaScript</a></li>
- </ul>
+    <li><a href="sass.html">Sass</a></li>
+    <li><a href="badges.html">Components</a></li>
+    <li><a href="collapsible.html">JavaScript</a></li>
+  </ul>
+</div>

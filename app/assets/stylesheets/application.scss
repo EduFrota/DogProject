@@ -13,6 +13,8 @@
 
  *= require_self
  */
+ .nav-content{ text-align: center;
+ }
 
  body {
   background-attachment: fixed;
@@ -21,7 +23,7 @@
 }
 
 fieldset {
-   margin-left: 18px; 
+   margin-left: 25px;
    border-style: solid;
    border-width: 0.5px;
    border-color: #a8cbff;
